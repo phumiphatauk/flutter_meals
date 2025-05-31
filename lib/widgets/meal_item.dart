@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_meals/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+import 'package:flutter_meals/widgets/meal_item_trait.dart';
 import 'package:flutter_meals/models/meal.dart';
 
 class MealItem extends StatelessWidget {
@@ -56,8 +57,8 @@ class MealItem extends StatelessWidget {
                       maxLines: 2,
                       textAlign: TextAlign.center,
                       softWrap: true,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      overflow: TextOverflow.ellipsis, // Very long text ...
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -69,7 +70,7 @@ class MealItem extends StatelessWidget {
                       children: [
                         MealItemTrait(
                           icon: Icons.schedule,
-                          label: "${meal.duration} min",
+                          label: '${meal.duration} min',
                         ),
                         const SizedBox(width: 12),
                         MealItemTrait(icon: Icons.work, label: complexityText),

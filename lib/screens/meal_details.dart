@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_meals/models/meal.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:flutter_meals/models/meal.dart';
 import 'package:flutter_meals/providers/favorites_provider.dart';
 
-class MealDetails extends ConsumerWidget {
-  const MealDetails({super.key, required this.meal});
+class MealDetailsScreen extends ConsumerWidget {
+  const MealDetailsScreen({super.key, required this.meal});
 
   final Meal meal;
 
@@ -41,8 +42,8 @@ class MealDetails extends ConsumerWidget {
           children: [
             Image.network(
               meal.imageUrl,
-              width: double.infinity,
               height: 300,
+              width: double.infinity,
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 14),
@@ -61,7 +62,7 @@ class MealDetails extends ConsumerWidget {
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
-            const SizedBox(height: 14),
+            const SizedBox(height: 24),
             Text(
               'Steps',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
